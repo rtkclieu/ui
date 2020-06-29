@@ -5,15 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 
 import { useTheme } from '../../hooks';
+import { IconProps } from './types';
 
-export interface LoadingProps {
-  className?: string;
-  color?: string;
-}
-
-const Loading: React.FunctionComponent<LoadingProps> = ({
+const Loading: React.FunctionComponent<IconProps> = ({
   className,
   color,
+  ...props
 }) => {
   const theme = useTheme();
 
@@ -23,6 +20,7 @@ const Loading: React.FunctionComponent<LoadingProps> = ({
       icon={faCircleNotch}
       color={color || theme.colors.primary}
       spin
+      {...props}
     />
   );
 };

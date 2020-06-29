@@ -218,6 +218,19 @@ export interface GlobalTheme {
   tabsInkbarThickness: string;
   tabsItemPadding: string;
 
+  // ---- Toggle ---- //
+  toggleHeight: string;
+  toggleWidth: string;
+  toggleOffBackground: string;
+  toggleOnBackground: string;
+  toggleDisabledBackground: string;
+  toggleOnIconColor: string;
+  toggleBorderRadius: string;
+  toggleCircleBackground: string;
+  toggleCircleHeight: string;
+  toggleCircleWidth: string;
+  toggleCircleTop: string;
+
   // ---- Tooltip ---- //
   tooltipArrowSize: string;
   tooltipBorder: string;

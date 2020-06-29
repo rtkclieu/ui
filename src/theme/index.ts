@@ -196,6 +196,19 @@ export const getDefaultTheme = (themeColors: Colors = colors): GlobalTheme => ({
   tabsInkbarThickness: '4px',
   tabsItemPadding: '8px 16px',
 
+  // ---- Toggle ---- //
+  toggleHeight: '16px',
+  toggleWidth: '32px',
+  toggleOffBackground: themeColors.gray,
+  toggleOnBackground: themeColors.primary,
+  toggleDisabledBackground: `${rgba(themeColors.gray, 0.4)}`,
+  toggleOnIconColor: themeColors.white,
+  toggleBorderRadius: '8px',
+  toggleCircleBackground: themeColors.white,
+  toggleCircleHeight: '12px',
+  toggleCircleWidth: '12px',
+  toggleCircleTop: '2px',
+
   // ---- Tooltip ---- //
   tooltipBorder: '1px solid',
   tooltipBorderColor: themeColors.border,
