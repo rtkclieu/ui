@@ -94,6 +94,8 @@ export {
   TabsFunctionComponent,
 } from './components/tabs/Tabs';
 
+export { Toggle, ToggleProps } from './components/toggle/Toggle';
+
 export {
   Typography,
   Level,
