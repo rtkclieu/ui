@@ -94,10 +94,10 @@ export const Toggle: React.FunctionComponent<ToggleProps> = ({
         initial={'off'}
         variants={{
           on: {
-            left: 18,
+            x: 18,
           },
           off: {
-            left: 2,
+            x: 2,
           },
         }}
         animate={isOn ? 'on' : 'off'}
