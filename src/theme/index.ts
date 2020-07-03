@@ -193,7 +193,7 @@ export const getDefaultTheme = (themeColors: Colors = colors): GlobalTheme => ({
   radioItemHoverColor: themeColors.primary,
   radioItemHoverBorder: `1px solid ${themeColors.primary}`,
   radioItemCheckedBackground: themeColors.primary,
-  radioItemCheckedBorderColor: `1px solid ${themeColors.primary}`,
+  radioItemCheckedBorderColor: themeColors.primary,
 
   // ---- Table ---- //
   tableEmptyContainerHeight: '100px',
