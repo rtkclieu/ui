@@ -205,6 +205,18 @@ export interface GlobalTheme {
   panelActiveBoxShadow: string;
   panelHoverBoxShadow: string;
 
+  // ---- Radio ---- //
+  radioItemLineHeight: string;
+  radioItemMargin: string;
+  radioItemFontSize: string;
+  radioItemFontColor: string;
+  radioItemBorder: string;
+  radioItemCheckedMiddleBackground: string;
+  radioItemHoverColor: string;
+  radioItemHoverBorder: string;
+  radioItemCheckedBackground: string;
+  radioItemCheckedBorderColor: string;
+
   // ---- Table ---- //
   tableEmptyContainerHeight: string;
   tableHeadCellPadding: string;

@@ -183,6 +183,18 @@ export const getDefaultTheme = (themeColors: Colors = colors): GlobalTheme => ({
   panelActiveBoxShadow: `0px 0px 4px ${rgba(themeColors.black, 0.2)}`,
   panelHoverBoxShadow: `0px 7px 21px ${rgba(themeColors.black, 0.07)}`,
 
+  // ---- Radio ---- //
+  radioItemLineHeight: '16px',
+  radioItemMargin: '4px',
+  radioItemFontSize: '14px',
+  radioItemFontColor: themeColors.body,
+  radioItemBorder: `1px solid ${themeColors.border}`,
+  radioItemCheckedMiddleBackground: themeColors.primaryBackground,
+  radioItemHoverColor: themeColors.primary,
+  radioItemHoverBorder: `1px solid ${themeColors.primary}`,
+  radioItemCheckedBackground: themeColors.primary,
+  radioItemCheckedBorderColor: `1px solid ${themeColors.primary}`,
+
   // ---- Table ---- //
   tableEmptyContainerHeight: '100px',
   tableHeadBorder: '2px solid',
