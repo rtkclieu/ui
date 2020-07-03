@@ -20,8 +20,10 @@ export default {
 
 export const simple = () => (
   <Radio name="radio">
-    <Radio.Item>Item 1</Radio.Item>
-    <Radio.Item>Item 2</Radio.Item>
-    <Radio.Item disabled>Item 3</Radio.Item>
+    <Radio.Item itemKey="item1">Item 1</Radio.Item>
+    <Radio.Item itemKey="item1">Item 2</Radio.Item>
+    <Radio.Item itemKey="item1" disabled>
+      Item 3
+    </Radio.Item>
   </Radio>
 );

@@ -9,7 +9,7 @@ export interface RadioItemProps {
   disabled?: boolean;
 
   /** unique identifier for the radio item */
-  itemKey?: string | number;
+  itemKey: string | number;
 }
 
 interface ContainerProps {
