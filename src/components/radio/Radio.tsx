@@ -19,7 +19,7 @@ export interface RadioProps {
   name: string;
 
   /** called when an item is selected */
-  onSelect?: string;
+  onSelect?: (itemKey: string | number) => void;
 }
 
 const Container = styled.div``;
