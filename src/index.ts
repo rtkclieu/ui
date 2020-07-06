@@ -78,6 +78,13 @@ export { createTheme } from './theme';
 
 export { GlobalTheme, Colors } from './theme/types';
 
+export {
+  Radio,
+  RadioProps,
+  RadioItemProps,
+  RadioFunctionComponent,
+} from './components/radio/Radio';
+
 export { ThemeProvider, ThemeContext } from './styled';
 
 export {

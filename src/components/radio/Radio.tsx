@@ -6,6 +6,8 @@ import { RadioContext } from './context';
 
 import { RadioItem, RadioItemProps } from './RadioItem';
 
+export { RadioItemProps } from './RadioItem';
+
 export interface RadioFunctionComponent<T = {}>
   extends React.FunctionComponent<T> {
   Item: React.FunctionComponent<RadioItemProps>;

@@ -9,8 +9,8 @@ describe('Radio', () => {
     const wrapper = shallow(
       <Radio name="radio">
         <Radio.Item itemKey="item1">Item 1</Radio.Item>
-        <Radio.Item itemKey="item1">Item 2</Radio.Item>
-        <Radio.Item itemKey="item1" disabled>
+        <Radio.Item itemKey="item2">Item 2</Radio.Item>
+        <Radio.Item itemKey="item3" disabled>
           Item 3
         </Radio.Item>
       </Radio>
@@ -25,8 +25,8 @@ describe('Radio', () => {
     const wrapper = mount(
       <Radio name="radio" onSelect={itemKey => onSelectMock(itemKey)}>
         <Radio.Item itemKey="item1">Item 1</Radio.Item>
-        <Radio.Item itemKey="item1">Item 2</Radio.Item>
-        <Radio.Item itemKey="item1" disabled>
+        <Radio.Item itemKey="item2">Item 2</Radio.Item>
+        <Radio.Item itemKey="item3" disabled>
           Item 3
         </Radio.Item>
       </Radio>
