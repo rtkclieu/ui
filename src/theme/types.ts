@@ -12,6 +12,7 @@ export interface Colors {
   primary: string;
   primaryBackground: string;
   purple: string;
+  quaternaryBackground: string;
   red: string;
   secondary: string;
   secondaryBackground: string;
@@ -19,6 +20,7 @@ export interface Colors {
   tableBorder: string;
   tabItemHorizontal: string;
   tabItemVertical: string;
+  tag: string;
   tertiary: string;
   tertiaryBackground: string;
   title: string;
