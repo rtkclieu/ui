@@ -23,15 +23,15 @@ const getCustomStyles = (theme: GlobalTheme) => ({
       ...provided,
       borderWidth: '1px',
       borderStyle: 'solid',
-      borderColor: theme.colors.border,
-      background: theme.colors.primaryBackground,
-      minHeight: '32px',
+      borderColor: theme.selectControlBorderColor,
+      background: theme.selectControlBackground,
+      minHeight: theme.selectControlMinHeight,
     };
 
     if (state.isFocused) {
       return {
         ...defaultStyles,
-        borderColor: theme.colors.primary,
+        borderColor: theme.selectControlHoverBorderColor,
         boxShadow: 'none',
       };
     }
@@ -39,7 +39,7 @@ const getCustomStyles = (theme: GlobalTheme) => ({
     if (state.isDisabled) {
       return {
         ...defaultStyles,
-        background: theme.colors.disabledBackground,
+        background: theme.selectControlDisabledBackground,
         opacity: 0.8,
       };
     }
@@ -52,22 +52,22 @@ const getCustomStyles = (theme: GlobalTheme) => ({
     const defaultStyles = {
       fontSize: '14px',
       fontFamily: 'Lato',
-      color: theme.colors.black,
+      color: theme.selectOptionColor,
     };
 
     if (state.isSelected) {
       return {
         ...provided,
         ...defaultStyles,
-        background: theme.colors.tertiaryBackground,
-        color: theme.colors.primary,
+        background: theme.selectOptionSelectedBackground,
+        color: theme.selectOptionSelectedColor,
         fontWeight: 'bold',
       };
     } else if (state.isFocused) {
       return {
         ...provided,
         ...defaultStyles,
-        backgroundColor: theme.colors.quaternaryBackground,
+        backgroundColor: theme.selectOptionFocusedBackground,
       };
     }
     return {
@@ -78,25 +78,25 @@ const getCustomStyles = (theme: GlobalTheme) => ({
   menu: provided => {
     return {
       ...provided,
-      background: theme.colors.primaryBackground,
+      background: theme.selectMenuBackground,
     };
   },
   multiValueLabel: provided => {
     return {
       ...provided,
-      color: theme.colors.tag,
+      color: theme.selectMultiValueLabelColor,
     };
   },
   multiValue: provided => {
     return {
       ...provided,
-      background: theme.colors.quaternaryBackground,
+      background: theme.selectMultiValueBackground,
     };
   },
   singleValue: provided => {
     return {
       ...provided,
-      color: theme.colors.primary,
+      color: theme.selectSingleValueColor,
       fontWeight: 'bold',
     };
   },
@@ -107,13 +107,17 @@ const Container = styled.div`
   font-family: 'Lato';
   font-size: 14px;
 
+  .rtk__control:hover {
+    border-color: ${({ theme }) => theme.selectControlHoverBorderColor};
+  }
+
   .rtk__input input {
     font-family: inherit;
   }
 
   .rtk__multi-value__remove:hover {
     cursor: pointer;
-    background: ${({ theme }) => theme.colors.quaternaryBackground};
+    background: ${({ theme }) => theme.selectMultiValueRemoveHoverBackground};
   }
 
   .rtk__indicator-separator {

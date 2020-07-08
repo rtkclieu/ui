@@ -195,6 +195,22 @@ export const getDefaultTheme = (themeColors: Colors = colors): GlobalTheme => ({
   radioItemCheckedBackground: themeColors.primary,
   radioItemCheckedBorderColor: themeColors.primary,
 
+  // ---- Select ---- //
+  selectControlBorderColor: themeColors.border,
+  selectControlHoverBorderColor: themeColors.primary,
+  selectControlBackground: themeColors.primaryBackground,
+  selectControlDisabledBackground: themeColors.disabledBackground,
+  selectControlMinHeight: '32px',
+  selectOptionColor: themeColors.title,
+  selectOptionSelectedBackground: themeColors.tertiaryBackground,
+  selectOptionSelectedColor: themeColors.primary,
+  selectOptionFocusedBackground: themeColors.quaternaryBackground,
+  selectMenuBackground: themeColors.primaryBackground,
+  selectMultiValueLabelColor: themeColors.tag,
+  selectMultiValueBackground: themeColors.quaternaryBackground,
+  selectMultiValueRemoveHoverBackground: themeColors.quaternaryBackground,
+  selectSingleValueColor: themeColors.primary,
+
   // ---- Table ---- //
   tableEmptyContainerHeight: '100px',
   tableHeadBorder: '2px solid',

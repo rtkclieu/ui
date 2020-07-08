@@ -6,6 +6,19 @@ import { Select } from '../Select';
 
 describe('Select', () => {
   it('renders', () => {
-    // your test case here
+    const options = [
+      { value: 'chocolate', label: 'Chocolate' },
+      { value: 'strawberry', label: 'Strawberry' },
+      { value: 'vanilla', label: 'Vanilla' },
+    ];
+    const wrapper = shallow(
+      <Select
+        selectProps={{
+          options,
+        }}
+      />
+    );
+
+    expect(wrapper.exists('StateManager')).toBe(true);
   });
 });

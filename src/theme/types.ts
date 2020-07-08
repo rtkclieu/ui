@@ -220,6 +220,22 @@ export interface GlobalTheme {
   radioItemCheckedBackground: string;
   radioItemCheckedBorderColor: string;
 
+  // ---- Select ---- //
+  selectControlBorderColor: string;
+  selectControlHoverBorderColor: string;
+  selectControlBackground: string;
+  selectControlDisabledBackground: string;
+  selectControlMinHeight: string;
+  selectOptionColor: string;
+  selectOptionSelectedBackground: string;
+  selectOptionSelectedColor: string;
+  selectOptionFocusedBackground: string;
+  selectMenuBackground: string;
+  selectMultiValueLabelColor: string;
+  selectMultiValueBackground: string;
+  selectMultiValueRemoveHoverBackground: string;
+  selectSingleValueColor: string;
+
   // ---- Table ---- //
   tableEmptyContainerHeight: string;
   tableHeadCellPadding: string;
