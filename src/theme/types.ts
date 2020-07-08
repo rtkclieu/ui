@@ -5,6 +5,7 @@ export interface Colors {
   border: string;
   blue: string;
   description: string;
+  disabledBackground: string;
   gray: string;
   green: string;
   label: string;

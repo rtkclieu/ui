@@ -7,6 +7,7 @@ export const colors: Colors = {
   border: '#CCCCCC',
   blue: '#23618E',
   description: '#707F86',
+  disabledBackground: '#CCCCCC',
   gray: '#58595B',
   green: '#518042',
   label: '#000000',

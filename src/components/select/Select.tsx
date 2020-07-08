@@ -36,6 +36,14 @@ const getCustomStyles = (theme: GlobalTheme) => ({
       };
     }
 
+    if (state.isDisabled) {
+      return {
+        ...defaultStyles,
+        background: theme.colors.disabledBackground,
+        opacity: 0.8,
+      };
+    }
+
     return {
       ...defaultStyles,
     };
@@ -88,7 +96,7 @@ const getCustomStyles = (theme: GlobalTheme) => ({
   singleValue: provided => {
     return {
       ...provided,
-      color: theme.colors.title,
+      color: theme.colors.primary,
       fontWeight: 'bold',
     };
   },
@@ -152,6 +160,7 @@ export const Select: React.FunctionComponent<SelectProps> = ({
               </span>
             );
           },
+          ...selectProps.components,
         }}
         {...selectProps}
       />
