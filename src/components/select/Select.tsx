@@ -134,7 +134,8 @@ export const Select: React.FunctionComponent<SelectProps> = ({
   selectProps,
 }) => {
   const {
-    classNamePrefix, // eslint-disable-line @typescript-eslint/no-unused-vars
+    classNamePrefix, // eslint-disable-line @typescript-eslint/no-unused-vars,
+    components,
     ...restOfSelectProps
   } = selectProps;
 
@@ -148,7 +149,7 @@ export const Select: React.FunctionComponent<SelectProps> = ({
         classNamePrefix="rtk"
         styles={styles}
         components={{
-          ...selectProps.components,
+          ...components,
           DropdownIndicator: () => (
             <SelectIcon>
               <CaretDown color={theme.colors.body} />
