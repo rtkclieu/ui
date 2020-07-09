@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { default as ReactSelect } from 'react-select';
+import { default as ReactSelect, Props } from 'react-select';
 import styled from 'styled-components';
 
 import { useTheme } from '../../hooks/useTheme';
@@ -13,7 +13,7 @@ export interface SelectProps {
   className?: string;
 
   /** see https://react-select.com/props#api for documentation about these props */
-  selectProps: any;
+  selectProps: Props;
 }
 
 // defines the list of styles from react-select that are overriden
@@ -133,18 +133,22 @@ export const Select: React.FunctionComponent<SelectProps> = ({
   className,
   selectProps,
 }) => {
+  const {
+    classNamePrefix, // eslint-disable-line @typescript-eslint/no-unused-vars
+    ...restOfSelectProps
+  } = selectProps;
+
   const theme = useTheme();
 
-  const renderCustomStyles = React.useCallback(() => {
-    return getCustomStyles(theme);
-  }, [theme]);
+  const styles = React.useMemo(() => getCustomStyles(theme), [theme]);
 
   return (
     <Container className={`${className} rtk-select`} theme={theme}>
       <ReactSelect
         classNamePrefix="rtk"
-        styles={renderCustomStyles()}
+        styles={styles}
         components={{
+          ...selectProps.components,
           DropdownIndicator: () => (
             <SelectIcon>
               <CaretDown color={theme.colors.body} />
@@ -164,9 +168,8 @@ export const Select: React.FunctionComponent<SelectProps> = ({
               </span>
             );
           },
-          ...selectProps.components,
         }}
-        {...selectProps}
+        {...restOfSelectProps}
       />
     </Container>
   );
