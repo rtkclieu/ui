@@ -29,12 +29,18 @@ export interface FormItemProps {
   label?: React.ReactNode;
 }
 
+const FormItemContainer = styled.div`
+  margin-bottom: 16px;
+`;
+
 const Container = styled.div`
   position: relative;
 `;
 
 const Label = styled(Typography.Body)`
   color: ${({ theme }) => theme.colors.black};
+  font-size: 14px;
+  font-weight: bold;
 `;
 
 const StatusContainer = styled.div`
@@ -77,7 +83,7 @@ export const FormItem: React.FunctionComponent<FormItemProps> = ({
 }) => {
   const theme = useTheme();
   return (
-    <div className={`${className} rtk-form-item`}>
+    <FormItemContainer className={`${className} rtk-form-item`}>
       <Label theme={theme}>{label}</Label>
       <Container>
         <FormItemContext.Provider
@@ -110,7 +116,7 @@ export const FormItem: React.FunctionComponent<FormItemProps> = ({
           </AnimatePresence>
         </StatusContainer>
       </Container>
-    </div>
+    </FormItemContainer>
   );
 };
 

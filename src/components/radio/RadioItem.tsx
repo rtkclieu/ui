@@ -53,6 +53,7 @@ const StyledLabel = styled.label`
       height: 16px;
       width: 16px;
       border: ${({ theme }) => theme.radioItemBorder};
+      box-sizing: border-box;
 
       transition: all ${({ theme }) => theme.animationTimeVeryFast}s ease-in-out;
 
@@ -64,8 +65,8 @@ const StyledLabel = styled.label`
 
       position: absolute;
       display: block;
-      top: 6px;
-      left: 6px;
+      top: 5px;
+      left: 5px;
 
       height: 6px;
       width: 6px;
