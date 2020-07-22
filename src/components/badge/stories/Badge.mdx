@@ -1,0 +1,37 @@
+import { Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Title, SectionTitle } from '../../../../.storybook/components';
+import { Badge } from '../Badge';
+
+<Title
+  title="Badge"
+  subtitle="Also known as a pill or label. Often used to indicate status."
+/>
+
+<SectionTitle>Simple</SectionTitle>
+
+Note: you must manually set the color on any non-text `children` you supply (e.g. icons)
+
+<Preview>
+  <Story id="components-badge--simple"/>
+</Preview>
+
+
+<SectionTitle>Icons Only</SectionTitle>
+
+Flexible enough to be used with icons only
+
+<Preview>
+  <Story id="components-badge--image"/>
+</Preview>
+
+
+<SectionTitle>Text Only</SectionTitle>
+
+Centers the children if only the `rightChildren` property is set
+
+<Preview>
+  <Story id="components-badge--text"/>
+</Preview>
+
+<SectionTitle>Badge Props</SectionTitle>
+<Props of={ Badge } />
