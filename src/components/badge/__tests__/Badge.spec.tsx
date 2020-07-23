@@ -7,14 +7,14 @@ import { Icon } from '../../icons';
 
 describe('Badge', () => {
   it('renders', () => {
-    const wrapper = shallow(<Badge rightChildren="Test" />);
+    const wrapper = shallow(<Badge>Test</Badge>);
     expect(wrapper.find('Badge__StyledBadge')).toExist();
     expect(wrapper.find('Badge__StyledBadge').text()).toBe('Test');
   });
 
   it('can show an icon', () => {
     const exampleIcon = <Icon.Check />;
-    const wrapper = shallow(<Badge rightChildren={exampleIcon} />);
+    const wrapper = shallow(<Badge leftChildren={exampleIcon} />);
     expect(wrapper.find('Check')).toExist();
   });
 

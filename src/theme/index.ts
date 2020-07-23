@@ -18,8 +18,8 @@ export const getDefaultTheme = (themeColors: Colors = colors): GlobalTheme => ({
   badgeBackgroundOrange: themeColors.orange,
   badgeBackgroundPurple: themeColors.purple,
   badgeBackgroundBlue: themeColors.blue,
-  badgeBackgroundDarkGray: themeColors.gray,
-  badgeTextColorDark: themeColors.black,
+  badgeBackgroundGray: themeColors.gray,
+  badgeTextColorDark: themeColors.label,
   badgeTextColorLight: themeColors.white,
 
   // ---- Button ---- //

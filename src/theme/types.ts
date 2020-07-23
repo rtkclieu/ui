@@ -43,7 +43,7 @@ export interface GlobalTheme {
   badgeBackgroundOrange: string;
   badgeBackgroundPurple: string;
   badgeBackgroundBlue: string;
-  badgeBackgroundDarkGray: string;
+  badgeBackgroundGray: string;
   badgeTextColorDark: string;
   badgeTextColorLight: string;
 

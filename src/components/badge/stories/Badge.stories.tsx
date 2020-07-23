@@ -33,7 +33,7 @@ export default {
 export const simple = () => {
   const theme = useTheme();
   const exampleIcon = <Icon.Check color={theme.colors.white} />;
-  const exampleIconDark = <Icon.Check color={theme.colors.black} />;
+  const exampleIconDark = <Icon.Check color={theme.colors.label} />;
 
   return (
     <Container>
@@ -58,7 +58,7 @@ export const image = () => {
   const left = <Icon.Exclamation />;
   return (
     <Container>
-      <Badge leftChildren={left} backgroundColor="darkgray">
+      <Badge leftChildren={left} backgroundColor="gray">
         <Icon.InfoCircle />
       </Badge>
       <Spacer />

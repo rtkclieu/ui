@@ -11,19 +11,19 @@ export type BadgeColorType =
   | 'orange'
   | 'purple'
   | 'blue'
-  | 'darkgray';
+  | 'gray';
 
 export interface BadgeProps {
   /** className of the Badge component */
   className?: string;
+  /** Color to use for the body of the badge */
+  backgroundColor?: BadgeColorType;
   /** Content to show in the badge */
   children?: React.ReactNode;
   /** Optional left side content to show, typically an icon, properly padded */
   leftChildren?: React.ReactNode;
   /** Optional right side content to show in the badge */
   rightChildren?: React.ReactNode;
-  /** Color to use for the body of the badge */
-  backgroundColor?: BadgeColorType;
 }
 
 interface StyledBadgeProps {
@@ -45,8 +45,8 @@ function getThemeColor(theme, color) {
       return theme.badgeBackgroundOrange;
     case 'purple':
       return theme.badgeBackgroundPurple;
-    case 'darkgray':
-      return theme.badgeBackgroundDarkGray;
+    case 'gray':
+      return theme.badgeBackgroundGray;
     default:
       return theme.badgeBackgroundGreen;
   }
