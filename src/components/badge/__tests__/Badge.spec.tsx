@@ -19,11 +19,11 @@ describe('Badge', () => {
   });
 
   it('can set the backgroundColor prop ', () => {
-    const wrapper = shallow(<Badge backgroundColor="#FFFFFF" />);
+    const wrapper = shallow(<Badge backgroundColor="green" />); // hello
 
     // @ts-ignore
     expect(wrapper.find('Badge__StyledBadge').prop('backgroundColor')).toBe(
-      '#FFFFFF'
+      'green'
     );
   });
 });

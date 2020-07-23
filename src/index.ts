@@ -20,7 +20,7 @@ export {
   SizeType,
 } from './components/button/Button';
 
-export { Badge, BadgeProps } from './components/badge/Badge';
+export { Badge, BadgeProps, BadgeColorType } from './components/badge/Badge';
 
 export { Collapse, CollapseProps } from './components/collapse/Collapse';
 

@@ -36,6 +36,17 @@ export interface GlobalTheme {
   animationTimeMedium: number;
   animationTimeSlow: number;
 
+  // ---- Badge ---- //
+  badgeBackgroundGreen: string;
+  badgeBackgroundRed: string;
+  badgeBackgroundYellow: string;
+  badgeBackgroundOrange: string;
+  badgeBackgroundPurple: string;
+  badgeBackgroundBlue: string;
+  badgeBackgroundDarkGray: string;
+  badgeTextColorDark: string;
+  badgeTextColorLight: string;
+
   // ---- Button ---- //
   buttonBorderRadius: string;
   buttonPadding: string;

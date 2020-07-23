@@ -4,42 +4,82 @@ import styled, { css } from 'styled-components';
 import { useTheme } from '../../hooks';
 import { GlobalTheme } from '../..';
 
+export type BadgeColorType =
+  | 'green'
+  | 'red'
+  | 'yellow'
+  | 'orange'
+  | 'purple'
+  | 'blue'
+  | 'darkgray';
+
 export interface BadgeProps {
   /** className of the Badge component */
   className?: string;
-  /** Right side content to show in the badge */
-  rightChildren?: React.ReactNode;
-  /** Optional left side content to show, typically an icon */
+  /** Content to show in the badge */
+  children?: React.ReactNode;
+  /** Optional left side content to show, typically an icon, properly padded */
   leftChildren?: React.ReactNode;
+  /** Optional right side content to show in the badge */
+  rightChildren?: React.ReactNode;
   /** Color to use for the body of the badge */
-  backgroundColor?: string;
-  /** Color to use for the text of the badge. Use a color that contrasts with the bockground */
-  textColor?: string;
+  backgroundColor?: BadgeColorType;
 }
 
 interface StyledBadgeProps {
-  backgroundColor?: string;
-  textColor?: string;
+  backgroundColor?: BadgeColorType;
   theme: GlobalTheme;
 }
 
+function getThemeColor(theme, color) {
+  switch (color) {
+    case 'green':
+      return theme.badgeBackgroundGreen;
+    case 'red':
+      return theme.badgeBackgroundRed;
+    case 'blue':
+      return theme.badgeBackgroundBlue;
+    case 'yellow':
+      return theme.badgeBackgroundYellow;
+    case 'orange':
+      return theme.badgeBackgroundOrange;
+    case 'purple':
+      return theme.badgeBackgroundPurple;
+    case 'darkgray':
+      return theme.badgeBackgroundDarkGray;
+    default:
+      return theme.badgeBackgroundGreen;
+  }
+}
+
+function needsDarkText(theme, color) {
+  return color === 'yellow' || color === 'orange';
+}
+
 export const StyledBadge = styled.span<StyledBadgeProps>`
-  ${({ backgroundColor, textColor, theme }) => css`
-    padding: 4px 10px 5px 9px;
-    border-radius: 14px;
+  ${({ backgroundColor, theme }) => css`
+    padding: 4px 12px 4px 12px;
+    border-radius: 16px;
     white-space: nowrap;
     font-weight: bold;
     border: 0px;
-    background: ${backgroundColor || theme.colors.primary};
-    color: ${textColor || theme.colors.white};
+    color: ${needsDarkText(theme, backgroundColor)
+      ? theme.badgeTextColorDark
+      : theme.badgeTextColorLight};
+    background: ${getThemeColor(theme, backgroundColor)};
   `};
 `;
 
 const SeparateContents = styled.span`
-  margin-right: 7px;
+  margin-right: 4px;
+`;
+
+const SeparateRight = styled.span`
+  margin-left: 4px;
 `;
 
 export const Badge: React.FunctionComponent<BadgeProps> = ({
+  children,
   rightChildren,
   leftChildren,
   className,
@@ -50,7 +90,8 @@ export const Badge: React.FunctionComponent<BadgeProps> = ({
   return (
     <StyledBadge className={className} theme={theme} {...rest}>
       {leftChildren && <SeparateContents>{leftChildren}</SeparateContents>}
-      {rightChildren}
+      {children}
+      {rightChildren && <SeparateRight>{rightChildren}</SeparateRight>}
     </StyledBadge>
   );
 };
@@ -61,6 +102,5 @@ Badge.defaultProps = {
   className: '',
   rightChildren: null,
   leftChildren: null,
-  backgroundColor: '',
-  textColor: '',
+  backgroundColor: 'green',
 };

@@ -8,6 +8,17 @@ import { Badge } from '../Badge';
 import mdx from './Badge.mdx';
 import { Icon } from '../../icons';
 import { useTheme } from '../../../hooks';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  margin-bottom: 10px;
+`;
+
+const Spacer = styled.span`
+  height: 1px;
+  padding: 5px;
+`;
 
 export default {
   title: 'Components/Badge',
@@ -22,29 +33,48 @@ export default {
 export const simple = () => {
   const theme = useTheme();
   const exampleIcon = <Icon.Check color={theme.colors.white} />;
-  return <Badge rightChildren="v10.42" leftChildren={exampleIcon} />;
+  const exampleIconDark = <Icon.Check color={theme.colors.black} />;
+
+  return (
+    <Container>
+      <Badge leftChildren={exampleIcon}>v10.42</Badge>
+      <Spacer />
+      <Badge rightChildren={exampleIcon} backgroundColor="red">
+        v10.42
+      </Badge>
+      <Spacer />
+      <Badge
+        leftChildren={exampleIconDark}
+        rightChildren={exampleIconDark}
+        backgroundColor="yellow"
+      >
+        v10.42
+      </Badge>
+    </Container>
+  );
 };
 
 export const image = () => {
   const left = <Icon.Exclamation />;
-  const right = <Icon.InfoCircle />;
   return (
-    <Badge
-      rightChildren={right}
-      leftChildren={left}
-      backgroundColor="#518042"
-      textColor="#FFFFFF"
-    />
+    <Container>
+      <Badge leftChildren={left} backgroundColor="darkgray">
+        <Icon.InfoCircle />
+      </Badge>
+      <Spacer />
+      <Badge backgroundColor="blue">
+        <Icon.InfoCircle />
+      </Badge>
+    </Container>
   );
 };
 
 export const text = () => {
-  const right = 'Text Only';
   return (
-    <Badge
-      rightChildren={right}
-      backgroundColor="#518042"
-      textColor="#FFFFFF"
-    />
+    <Container>
+      <Badge backgroundColor="purple">Text Only</Badge>
+      <Spacer />
+      <Badge backgroundColor="orange">?</Badge>
+    </Container>
   );
 };
