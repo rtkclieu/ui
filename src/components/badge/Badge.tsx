@@ -58,7 +58,7 @@ function needsDarkText(theme, color) {
 
 export const StyledBadge = styled.span<StyledBadgeProps>`
   ${({ backgroundColor, theme }) => css`
-    padding: 4px 12px 4px 12px;
+    padding: 4px 10px 4px 9px;
     border-radius: 16px;
     white-space: nowrap;
     font-weight: bold;
