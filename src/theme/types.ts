@@ -136,6 +136,17 @@ export interface GlobalTheme {
   dividerTextPrimaryBackground: string;
   dividerTextColor: string;
 
+  // ---- DropPad ---- //
+  dropPadPadding: string;
+  dropPadHoverBackground: string;
+  dropPadBackground: string;
+  dropPadBorder: string;
+  dropPadHoverBorderColor: string;
+  dropPadBorderColor: string;
+  dropPadBorderRadius: string;
+  dropPadFileLoadingBackground: string;
+  dropPadFileLoadingBarBackground: string;
+
   // ---- Input ---- //
   inputBackground: string;
   inputBorder: string;

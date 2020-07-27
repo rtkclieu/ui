@@ -111,6 +111,17 @@ export const getDefaultTheme = (themeColors: Colors = colors): GlobalTheme => ({
   dividerTextPrimaryBackground: themeColors.primaryBackground,
   dividerTextColor: themeColors.body,
 
+  // ---- DropPad ---- //
+  dropPadPadding: '8px',
+  dropPadHoverBackground: `${rgba(themeColors.primary, 0.6)}`,
+  dropPadBackground: `${rgba(themeColors.primary, 0.2)}`,
+  dropPadBorder: '1px dashed',
+  dropPadHoverBorderColor: themeColors.primary,
+  dropPadBorderColor: themeColors.primary,
+  dropPadBorderRadius: '4px',
+  dropPadFileLoadingBackground: themeColors.secondaryBackground,
+  dropPadFileLoadingBarBackground: themeColors.primary,
+
   // ---- Layout ---- //
   layoutHeaderHeight: '44px',
   layoutHeaderPaddingSmall: '0 8px',

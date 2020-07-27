@@ -2,7 +2,7 @@ import { Colors } from './types';
 
 export const colors: Colors = {
   black: '#000000',
-  body: '#58595B',
+  body: '#000000',
   bodyDisabled: '#CCCCCC',
   border: '#CCCCCC',
   blue: '#23618E',

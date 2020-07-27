@@ -1,0 +1,116 @@
+import * as React from 'react';
+import styled from 'styled-components';
+
+import { useDropzone } from 'react-dropzone';
+
+import PaperClip from '../icons/PaperClip';
+
+import { useTheme } from '../../hooks/useTheme';
+import { Typography } from '../typography/Typography';
+import { DropPadFile } from './DropPadFile';
+
+export interface DroppedFile {
+  file: File;
+  percentUploaded: number;
+}
+
+export interface DropPadProps {
+  /** className for the DropPad component */
+  className?: string;
+
+  /** files that have been dropped */
+  files: DroppedFile[];
+
+  /** called after a file has been dropped on the pad */
+  onDrop?: (files: File[]) => void;
+}
+
+const Container = styled.div``;
+
+const DropPadContainer = styled.div<{ isDragActive: boolean }>`
+  min-height: 100px;
+  background: ${({ theme, isDragActive }) =>
+    isDragActive ? theme.dropPadHoverBackground : theme.dropPadBackground};
+  padding: ${({ theme }) => theme.dropPadPadding};
+  border-radius: ${({ theme }) => theme.dropPadBorderRadius};
+
+  height: 4em;
+
+  transition: background ${({ theme }) => theme.animationTimeVeryFast}s
+    ease-in-out;
+
+  cursor: pointer;
+`;
+
+const BorderContainer = styled.div<{ isDragActive: boolean }>`
+  height: 100%;
+  width: 100%;
+
+  border: ${({ theme }) => theme.dropPadBorder};
+  border-color: ${({ theme, isDragActive }) =>
+    isDragActive ? theme.dropPadHoverBorderColor : theme.dropPadBorderColor};
+  border-radius: ${({ theme }) => theme.dropPadBorderRadius};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const StyledPaperClip = styled(PaperClip)`
+  margin-right: 8px;
+`;
+
+export const DropPad: React.FunctionComponent<DropPadProps> = ({
+  className,
+  onDrop,
+  files,
+}) => {
+  const handleDrop = React.useCallback(
+    files => {
+      const newFiles = files.map(file => ({
+        file,
+        percentUploaded: 0,
+      }));
+
+      if (onDrop) {
+        onDrop(newFiles);
+      }
+    },
+    [onDrop]
+  );
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop: handleDrop,
+  });
+
+  const theme = useTheme();
+
+  return (
+    <Container className={`${className} rtk-drop-pad`}>
+      <DropPadContainer
+        {...getRootProps()}
+        isDragActive={isDragActive}
+        theme={theme}
+      >
+        <BorderContainer theme={theme} isDragActive={isDragActive}>
+          <input {...getInputProps()} />
+          <Typography.Body>
+            <StyledPaperClip />
+            <strong>Choose a file</strong>&nbsp;to attach or drag it here.
+          </Typography.Body>
+        </BorderContainer>
+      </DropPadContainer>
+      {files.map(({ file, percentUploaded }, i) => {
+        return (
+          <DropPadFile file={file} key={i} percentUploaded={percentUploaded} />
+        );
+      })}
+    </Container>
+  );
+};
+
+DropPad.defaultProps = {
+  files: [],
+};
+
+DropPad.displayName = 'DropPad';

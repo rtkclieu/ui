@@ -41,6 +41,8 @@ const Label = styled(Typography.Body)`
   color: ${({ theme }) => theme.colors.black};
   font-size: 14px;
   font-weight: bold;
+
+  margin-bottom: 4px;
 `;
 
 const StatusContainer = styled.div`
