@@ -34,7 +34,7 @@ const DropPadContainer = styled.div<{ isDragActive: boolean }>`
   padding: ${({ theme }) => theme.dropPadPadding};
   border-radius: ${({ theme }) => theme.dropPadBorderRadius};
 
-  height: 4em;
+  height: 3em;
 
   transition: background ${({ theme }) => theme.animationTimeVeryFast}s
     ease-in-out;
