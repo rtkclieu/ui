@@ -23,6 +23,9 @@ export interface DropPadProps {
 
   /** called after a file has been dropped on the pad */
   onDrop?: (files: File[]) => void;
+
+  /** called when the delete icon is clicked on a dropped file */
+  onDelete?: (key: string | number) => void;
 }
 
 const Container = styled.div``;
@@ -63,6 +66,7 @@ const StyledPaperClip = styled(PaperClip)`
 export const DropPad: React.FunctionComponent<DropPadProps> = ({
   className,
   onDrop,
+  onDelete,
   files,
 }) => {
   const handleDrop = React.useCallback(
@@ -102,7 +106,12 @@ export const DropPad: React.FunctionComponent<DropPadProps> = ({
       </DropPadContainer>
       {files.map(({ file, percentUploaded }, i) => {
         return (
-          <DropPadFile file={file} key={i} percentUploaded={percentUploaded} />
+          <DropPadFile
+            file={file}
+            key={i}
+            percentUploaded={percentUploaded}
+            onDelete={onDelete}
+          />
         );
       })}
     </Container>

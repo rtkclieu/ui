@@ -12,6 +12,7 @@ import { DroppedFile } from './DropPad';
 
 export interface DropPadFileProps extends DroppedFile {
   key: string | number;
+  onDelete?: (key: string | number) => void;
 }
 
 const Container = styled.div`
@@ -40,30 +41,38 @@ const StyledFileIcon = styled(File)`
 
 const StyledTrashIcon = styled(TrashAlt)`
   color: ${({ theme }) => theme.colors.primary};
+  cursor: pointer;
 `;
 
-const LoadingBarContainer = styled.div`
-  position: relative;
-  background: ${({ theme }) => theme.dropPadFileLoadingBackground};
-  height: 4px;
-  border-radius: 2px;
+// const LoadingBarContainer = styled.div`
+//   position: relative;
+//   background: ${({ theme }) => theme.dropPadFileLoadingBackground};
+//   height: 4px;
+//   border-radius: 2px;
 
-  margin-top: 8px;
-`;
+//   margin-top: 8px;
+// `;
 
-const LoadingBar = styled.div`
-  position: absolute;
-  background: ${({ theme }) => theme.dropPadFileLoadingBarBackground};
-  height: 4px;
-  border-radius: 2px;
-`;
+// const LoadingBar = styled.div`
+//   position: absolute;
+//   background: ${({ theme }) => theme.dropPdjnvkklklklkadFileLoadingBarBackground};
+//   height: 4px;
+//   border-radius: 2px;
+// `;
 
 export const DropPadFile: React.FunctionComponent<DropPadFileProps> = ({
   file,
   key,
-  percentUploaded,
+  // percentUploaded,
+  onDelete,
 }) => {
   const theme = useTheme();
+
+  const handleDelete = React.useCallback(() => {
+    if (onDelete) {
+      onDelete(key);
+    }
+  }, [onDelete, key]);
 
   return (
     <Container key={key} theme={theme}>
@@ -75,15 +84,16 @@ export const DropPadFile: React.FunctionComponent<DropPadFileProps> = ({
           </Typography.Body>
         </TextContainer>
         <StyledTrashIcon
-          onClick={() => console.log('foo')}
+          onClick={handleDelete}
           theme={theme}
           size={'1x'}
           inverse
         />
       </ContentContainer>
-      <LoadingBarContainer theme={theme}>
+      {/* TODO: Implement percent uploaded at a later date */}
+      {/* <LoadingBarContainer theme={theme}>
         <LoadingBar style={{ width: `${percentUploaded}%` }} theme={theme} />
-      </LoadingBarContainer>
+      </LoadingBarContainer> */}
     </Container>
   );
 };

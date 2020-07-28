@@ -27,5 +27,11 @@ export const simple = () => {
     setFiles(newFiles);
   }, []);
 
-  return <DropPad files={files} onDrop={handleDrop} />;
+  return (
+    <DropPad
+      files={files}
+      onDrop={handleDrop}
+      onDelete={key => console.log(key)}
+    />
+  );
 };
