@@ -79,7 +79,7 @@ export const DropPadFile: React.FunctionComponent<DropPadFileProps> = ({
         <TextContainer>
           <StyledFileIcon theme={theme} size={'2x'} />
           <Typography.Body>
-            <strong>{file.name}</strong>&nbsp;
+            <strong>{file.name}</strong>
           </Typography.Body>
         </TextContainer>
         <StyledTrashIcon
