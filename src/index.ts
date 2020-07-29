@@ -132,6 +132,8 @@ export {
   DroppedFile,
 } from './components/dropPad/DropPad';
 
+export { DropPadFileProps } from './components/dropPad/DropPadFile';
+
 export {
   Divider,
   DividerProps,
