@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as filesize from 'filesize';
 import styled from 'styled-components';
 
 import { Typography } from '../typography/Typography';
@@ -80,7 +79,7 @@ export const DropPadFile: React.FunctionComponent<DropPadFileProps> = ({
         <TextContainer>
           <StyledFileIcon theme={theme} size={'2x'} />
           <Typography.Body>
-            <strong>{file.name}</strong>&nbsp; ({filesize(file.size)})
+            <strong>{file.name}</strong>&nbsp;
           </Typography.Body>
         </TextContainer>
         <StyledTrashIcon
