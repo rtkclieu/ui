@@ -127,6 +127,12 @@ export { Placement } from './components/tooltip/placements';
 export { Select, SelectProps } from './components/select/Select';
 
 export {
+  DropPad,
+  DropPadProps,
+  DroppedFile,
+} from './components/dropPad/DropPad';
+
+export {
   Divider,
   DividerProps,
   Component,
